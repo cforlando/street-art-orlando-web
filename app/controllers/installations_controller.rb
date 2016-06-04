@@ -7,6 +7,11 @@ class InstallationsController < ApplicationController
     @installation = Installation.new
   end
 
+  def create
+    Installation.create(installation_params)
+    redirect_to root_path
+  end
+
   def edit
   end
 
@@ -15,5 +20,12 @@ class InstallationsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def installation_params
+    params.require(:installation).permit(:name, :description, :address)
+  end
+
 
 end
