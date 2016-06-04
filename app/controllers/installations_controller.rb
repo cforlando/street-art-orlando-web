@@ -4,6 +4,7 @@ class InstallationsController < ApplicationController
   end
 
   def new
+    @installation = Installation.new
   end
 
   def edit

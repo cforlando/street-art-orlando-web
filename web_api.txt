@@ -1,0 +1,62 @@
+### database api, via HTTP(s), REST
+
+## GET only
+/api/1/get_directories
+# out, text/json: { "Foo Foo": "long description", "Street Art": "Temporary and Semipermanent art" }
+
+
+## GET only
+/api/1/get_points_by_place/(\d+)/(\d+)/(\w+)
+# retrieves JSON of closest 1000 items
+# 1: latitude
+# 2: longitude
+# 3: directory name
+# out, text/json: array of dicts, which contain id, lat, lon, tags list (which contains arbitrary extensible string data, with id (for reporting) colon keyname colon arbitrary value)
+# eg -> /api/1/get_points_by_place/-23.7432381/81.1245616/Street+Art
+#    <- [ { "id:926,"lat":-23.7243115,"lon":81.21623,"tags":["124:artist:Alice","152:artist:Bob","tagid:tagkey:tagvalue","193:medium:spraypaint","12:title:Aaaht","72:caption:something obsene","991:photo:http://example.com/12341"]},  { "lat":-23.6123112,"lon":81.743255, }   ]
+
+
+## GET only
+/api/1/get_points_recently_changed/(\w+)
+# 1: directoryname
+
+
+## POST only
+/api/1/assert_point_destroyed
+# post params:
+#     pointid required
+#     personhint request
+
+
+## POST only
+/api/1/create_point
+# post params:
+#    directory required
+#    latitude required
+#    longitude required
+#    personhint required
+# out, text/json:  int of new point id, to be used next in add_point_data probably
+# eg <- 42
+
+## POST only
+/api/1/add_point_tag
+# adds a new tag about some point
+# post params:
+#    pointid required
+#    key reqired
+#    value required
+#    personhint required
+# out, text/json: str of resulting tagstring
+# eg <- "124312:keyname:example example arbitry data including colons after:::first two example"
+
+
+## POST only
+/api/1/report_for_review
+# post params:
+#    personhint required
+#    tagstring required
+#    why optional
+# 
+
+
+# authored by Chad Miller
