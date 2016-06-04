@@ -1,0 +1,11 @@
+<h1>Hello from installations#index page</h1>
+<br>
+<% @installations.each do |installation| %>
+  <div>
+    <h1><%= link_to installation.name, installation_path(installation) %></h1><br />
+    <i><%= installation.address %></i><br />
+    <p><%= installation.description %></p><br />
+  </div>
+
+  <hr />
+<% end %>
