@@ -17,9 +17,13 @@ class InstallationsController < ApplicationController
   end
 
   def edit
+    @installation = Installation.find(params[:id])
   end
 
   def update
+    @installation = Installation.find(params[:id])
+    @installation.update_attributes(installation_params)
+    redirect_to root_path
   end
 
   def destroy
