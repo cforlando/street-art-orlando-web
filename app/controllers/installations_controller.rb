@@ -12,6 +12,10 @@ class InstallationsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @installation = Installation.find(params[:id])
+  end
+
   def edit
   end
 
