@@ -5,6 +5,16 @@
 <br/><br/>
 <p><%= @installation.description %></p>
 
+<div>
+  <h2>Pics</h2>
+  <% @installation.images.each do |item| %>
+    <br>
+    <%= image_tag item.photo, class: "img-responsive" %>
+    <%= item.caption %>
+    <br>
+  <% end %>
+</div>
+
 <div class="pull-right">
     <%= link_to 'Edit', edit_installation_path(@installation), class: 'btn btn-primary' %>
   </div>

@@ -14,6 +14,7 @@ class InstallationsController < ApplicationController
 
   def show
     @installation = Installation.find(params[:id])
+    @image = Image.new
   end
 
   def edit
