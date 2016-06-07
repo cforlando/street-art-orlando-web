@@ -7,10 +7,10 @@
 
 <div>
   <h2>Pics</h2>
-  <% @installation.images.each do |item| %>
+  <% @installation.images.each do |art_installation| %>
     <br>
-    <%= image_tag item.photo, class: "img-responsive" %>
-    <%= item.caption %>
+    <%= image_tag art_installation.photo, class: "img-responsive" %>
+    <%= art_installation.caption %>
     <br>
   <% end %>
 </div>
