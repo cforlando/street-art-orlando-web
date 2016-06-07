@@ -15,6 +15,39 @@
   <% end %>
 </div>
 
+<div class="col-xs-10 col-xs-offset-1">
+  <div class="pull-right">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myPhotoModal">
+      Add a Photo
+    </button>
+    <%= link_to 'Edit', edit_installation_path(@installation), class: 'btn btn-warning' %>
+  </div>
+</div>
+
+<!-- PHOTO Modal -->
+<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myPhotoLabel">Add a photo...</h4>
+      </div>
+      <%= simple_form_for @image, url: installation_images_path(@installation) do |f| %>
+        <div class="modal-body">
+          <%= f.input :photo %>
+          <br>
+          <%= f.input :caption %>
+          <br>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</div>
+
 <div class="pull-right">
     <%= link_to 'Edit', edit_installation_path(@installation), class: 'btn btn-primary' %>
   </div>
