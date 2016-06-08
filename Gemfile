@@ -28,6 +28,7 @@ gem 'sprockets', '2.11.0'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'carrierwave-aws'
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
