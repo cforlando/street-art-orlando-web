@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'installations#index'
 
-  resources :installations
+  resources :installations do
+    resources :images, only: :create
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

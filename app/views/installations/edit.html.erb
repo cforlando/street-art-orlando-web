@@ -1,0 +1,8 @@
+<h1>Edit Details About the Art Installation</h1>
+<br>
+<%= simple_form_for @installation do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.submit  'Update', class: 'btn btn-success' %>
+<% end %>
