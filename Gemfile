@@ -26,6 +26,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
 gem 'simple_form'
+
+# Resize images and more.
+gem 'mini_magick', '~> 4.3.1'
+
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'figaro'
