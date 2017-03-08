@@ -14,3 +14,7 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore uploaded local content since it is transient data
+/public/uploads/*
+!/public/uploads/.keep
