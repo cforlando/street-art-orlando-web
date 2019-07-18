@@ -28,7 +28,7 @@ gem 'sprockets', '2.11.0'
 gem 'simple_form'
 
 # Resize images and more.
-gem 'mini_magick', '~> 4.3.1'
+gem 'mini_magick', '~> 4.9.4'
 
 gem 'carrierwave'
 gem 'carrierwave-aws'
